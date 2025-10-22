@@ -1,7 +1,6 @@
 import java.util.Scanner;
 
-public class Main 
-{
+public class Main {
     public static void main(String[] args) {
         int correctness = 0;
 
@@ -10,6 +9,13 @@ public class Main
         System.out.println(w.scoreGuess("iss"));
         System.out.println(w.scoreGuess("issipp"));
         System.out.println(w.scoreGuess("mississippi"));
+
+        WordMatch b = new WordMatch("aaaabb");
+        System.out.println(b.scoreGuess("a"));
+        System.out.println(b.scoreGuess("aa"));
+        System.out.println(b.scoreGuess("aaa"));
+        System.out.println(b.scoreGuess("aabb"));
+        System.out.println(b.scoreGuess("c"));
 
         WordMatch game = new WordMatch("concatenation");
         System.out.println(game.scoreGuess("ten"));

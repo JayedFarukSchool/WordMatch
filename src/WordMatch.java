@@ -8,9 +8,8 @@ public class WordMatch {
 
     public int scoreGuess(String guess) {
         int score = 0;
-        for (int i = 0; i <= (secret.length() - guess.length()); i++) {
-            if (secret.substring(i, i + guess.length()).equals(guess)) ;
-            {
+        for (int i = 0; i <= secret.length() - guess.length(); i++) {
+            if (secret.substring(i, i + guess.length()).equals(guess)) {
                 score++;
             }
         }
