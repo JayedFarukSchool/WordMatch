@@ -1,9 +1,12 @@
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
-        int correctness = 0;
-
+    public static void main(String[] args) throws IOException {
+        System.out.println(read());
+/*
         WordMatch w = new WordMatch("mississippi");
         System.out.println(w.scoreGuess("i"));
         System.out.println(w.scoreGuess("iss"));
@@ -24,6 +27,19 @@ public class Main {
         System.out.println(game.scoreGuess("con"));
         System.out.println(game.scoreGuess("cat"));
         System.out.println(game.findBetterGuess("con", "cat"));
-
+        */
+    }
+    public static int read() throws FileNotFoundException{
+        int cGuesses = 0;
+        File f = new File("src/Guesses.txt");
+        Scanner s = new Scanner(f);
+        while (s.hasNextLine()){
+            String word = s.next();
+            String arg1 = s.next();
+            String arg2 = s.next();
+            WordMatch q = new WordMatch(word);
+            cGuesses += q.scoreGuess(q.findBetterGuess(arg1,arg2));
+        }
+    return cGuesses;
     }
 }

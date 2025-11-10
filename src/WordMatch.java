@@ -3,7 +3,6 @@ public class WordMatch {
 
     public WordMatch(String word) {
         secret = word;
-
     }
 
     public int scoreGuess(String guess) {
@@ -23,11 +22,8 @@ public class WordMatch {
         if (scoreGuess(guess2) > scoreGuess(guess1)) {
             return guess2;
         }
-        if (guess1.compareTo(guess2) > 0) {
-            return guess1;
-        } else {
-            return guess2;
-        }
+        if (guess1.compareTo(guess2) > 0) return guess1;
+        return guess2;
 
     }
 }
